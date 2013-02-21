@@ -1,4 +1,9 @@
 Play! framework plugin for Vim
 ==============================
 
-Underway...
+Yet underway...
+
+Requirements
+------------
+
+* Vim 7.x - because since this version Vim has Groovy support
