@@ -11,7 +11,7 @@ Requirements
 Recommended plugins
 -------------------
 
-play.vim will perfectly work with:
+play.vim will perfectly works with:
 
 * [snipMate](https://github.com/msanders/snipmate.vim)
 * [matchit](http://www.vim.org/scripts/script.php?script_id=39)
