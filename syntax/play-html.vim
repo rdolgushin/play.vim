@@ -15,23 +15,19 @@ runtime! syntax/html.vim
 runtime! syntax/html/html5.vim
 unlet b:current_syntax
 
-syn region playHtmlTagBlock     start="#{"  end="}"  containedin=ALL
-syn region playHtmlVarBlock     start="${"  end="}"  containedin=ALL
-syn region playHtmlRouterBlock  start="@{"  end="}"  containedin=ALLBUT,playHtmlRRouterBlock
-syn region playHtmlRRouterBlock start="@@{" end="}"  containedin=ALL
-syn region playHtmlMsgBlock     start="&{"  end="}"  containedin=ALL
-syn region playHtmlCommentBlock start="*{"  end="}*" containedin=ALL
-syn region playHtmlScriptBlock  start="%{"  end="}%" containedin=ALL
+syn include @groovy syntax/groovy.vim
+
+syn match playHtmlIdentifier    "[#@$&]" contained
+syn region playHtmlTagBlock     start="[#@$&]{" end="}"  containedin=htmlString contains=@groovy,playHtmlIdentifier
+syn region playHtmlScriptBlock  start="%{"      end="}%" containedin=ALL        contains=@groovy
+syn region playHtmlCommentBlock start="\*{"     end="}\*"
 
 command -nargs=+ HiLink hi def link <args>
 
+HiLink playHtmlIdentifier   PreProc
 HiLink playHtmlTagBlock     PreProc
-HiLink playHtmlVarBlock     PreProc
-HiLink playHtmlRouterBlock  PreProc
-HiLink playHtmlRRouterBlock PreProc
-HiLink playHtmlMsgBlock     PreProc
-HiLink playHtmlCommentBlock Comment
 HiLink playHtmlScriptBlock  PreProc
+HiLink playHtmlCommentBlock Comment
 
 delcommand HiLink
 
