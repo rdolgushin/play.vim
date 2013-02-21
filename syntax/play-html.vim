@@ -9,25 +9,30 @@ elseif exists("b:current_syntax")
   finish
 endif
 
+if !exists("main_syntax")
+  let main_syntax = 'html'
+endif
+
 if version < 600
   source <sfile>:p:h/html.vim
   source <sfile>:p:h/html/html5.vim
 else
   runtime! syntax/html.vim
   runtime! syntax/html/html5.vim
+  unlet b:current_syntax
 endif
-unlet b:current_syntax
 
-syn region playHtmlTagBlock     start="#{" end="}"
-syn region playHtmlVarBlock     start="${" end="}"
-syn region playHtmlRouterBlock  start="@{" end="}"
-syn region playHtmlMsgBlock     start="&{" end="}"
-syn region playHtmlCommentBlock start="*{" end="}*"
-syn region playHtmlScriptBlock  start="%{" end="}%"
+syn region playHtmlTagBlock     start="#{"  end="}"  containedin=ALL
+syn region playHtmlVarBlock     start="${"  end="}"  containedin=ALL
+syn region playHtmlRouterBlock  start="@{"  end="}"  containedin=ALLBUT,playHtmlRRouterBlock
+syn region playHtmlRRouterBlock start="@@{" end="}"  containedin=ALL
+syn region playHtmlMsgBlock     start="&{"  end="}"  containedin=ALL
+syn region playHtmlCommentBlock start="*{"  end="}*" containedin=ALL
+syn region playHtmlScriptBlock  start="%{"  end="}%" containedin=ALL
 
 if version >= 508 || !exists("did_play_html_syn_inits")
   if version < 508
-    let did_rythm_syn_inits = 1
+    let did_play_html_syn_inits = 1
     command -nargs=+ HiLink hi link <args>
   else
     command -nargs=+ HiLink hi def link <args>
@@ -36,6 +41,7 @@ if version >= 508 || !exists("did_play_html_syn_inits")
   HiLink playHtmlTagBlock     PreProc
   HiLink playHtmlVarBlock     PreProc
   HiLink playHtmlRouterBlock  PreProc
+  HiLink playHtmlRRouterBlock PreProc
   HiLink playHtmlMsgBlock     PreProc
   HiLink playHtmlCommentBlock Comment
   HiLink playHtmlScriptBlock  PreProc
