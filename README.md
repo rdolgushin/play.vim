@@ -1,7 +1,7 @@
 Play! framework plugin for Vim
 ==============================
 
-Yet underway...
+Yet underway... But can be used.
 
 Requirements
 ------------
