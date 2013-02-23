@@ -1,3 +1,8 @@
+" File:         play.vim
+" Description:  Play! framework plugin for Vim
+" Author:       Roman Dolgushin <rd@roman-dolgushin.ru>
+" URL:          https://github.com/rdolgushin/play.vim
+
 au BufNewFile,BufRead *conf/routes  call SetPlayFiletype("play-routes")
 au BufNewFile,BufRead *views/*.html call SetPlayFiletype("play-html")
 
