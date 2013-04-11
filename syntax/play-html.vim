@@ -17,7 +17,7 @@ unlet b:current_syntax
 
 syn include @groovy syntax/groovy.vim
 
-syn match playHtmlIdentifier    "[#@$&]" contained
+syn match  playHtmlIdentifier   "[#@$&]"                 contained
 syn region playHtmlTagBlock     start="[#@$&]{" end="}"  containedin=htmlString contains=@groovy,playHtmlIdentifier
 syn region playHtmlScriptBlock  start="%{"      end="}%" containedin=ALL        contains=@groovy
 syn region playHtmlCommentBlock start="\*{"     end="}\*"

@@ -11,6 +11,8 @@ syn keyword playHttpVerb GET    nextgroup=playRoute skipwhite
 syn keyword playHttpVerb POST   nextgroup=playRoute skipwhite
 syn keyword playHttpVerb PUT    nextgroup=playRoute skipwhite
 syn keyword playHttpVerb DELETE nextgroup=playRoute skipwhite
+syn keyword playHttpVerb WS     nextgroup=playRoute skipwhite
+syn match   playHttpVerb /[*]/  nextgroup=playRoute skipwhite
 
 syn match playComment /#.*/
 syn match playParameter ":\w\+" contained containedin=playRoute
@@ -21,4 +23,3 @@ hi def link playHttpVerb Preproc
 hi def link playParameter Special
 hi def link playRoute String
 hi def link playComment Comment
-
