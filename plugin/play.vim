@@ -5,6 +5,6 @@
 
 " Support of tComment
 if exists('loaded_tcomment')
-  call tcomment#DefineType('play-html', '*{ %s }*')
-  call tcomment#DefineType('play-routes', '# %s')
+  au FileType play-html   call tcomment#DefineType('play-html', '*{ %s }*')
+  au FileType play-routes call tcomment#DefineType('play-routes', '# %s')
 end
