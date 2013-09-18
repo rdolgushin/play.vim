@@ -8,6 +8,10 @@ Requirements
 
 * Vim 7.x - because since this version Vim has Groovy support
 
+> *Note:*
+> If you upgraded your Vim to version 7.4, see fixed
+> [groovy plugin](https://github.com/rdolgushin/groovy.vim).
+
 Recommended plugins
 -------------------
 
