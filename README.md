@@ -3,6 +3,14 @@ Play! framework 1.x plugin for Vim
 
 Yet underway... But can be used.
 
+Features
+--------
+
+* Syntax highlighting (templates + routes)
+* [snipMate](https://github.com/msanders/snipmate.vim) snippets (templates)
+* [matchit.vim](http://www.vim.org/scripts/script.php?script_id=39) integration (templates) (while only for HTML tags)
+* [tComment](https://github.com/tomtom/tcomment_vim)'ing (templates + routes)
+
 Requirements
 ------------
 
