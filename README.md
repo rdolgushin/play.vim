@@ -1,5 +1,5 @@
-Play! framework plugin for Vim
-==============================
+Play! framework 1.x plugin for Vim
+==================================
 
 Yet underway... But can be used.
 
